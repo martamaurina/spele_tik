@@ -86,6 +86,16 @@ btn7=Button(mansLogs, text="", width=6, height=3, font=('Helvica', 24),command=l
 btn8=Button(mansLogs, text="", width=6, height=3, font=('Helvica', 24),command=lambda:btnClick(btn8))
 btn9=Button(mansLogs, text="", width=6, height=3, font=('Helvica', 24),command=lambda:btnClick(btn9))
 
+btn1.config(bd=8, bg = "#F4C2C2")
+btn2.config(bd=8, bg = "#FFE0E0")
+btn3.config(bd=8, bg = "#F4C2C2")
+btn4.config(bd=8, bg = "#FFE0E0")
+btn5.config(bd=8, bg = "#F4C2C2")
+btn6.config(bd=8, bg = "#FFE0E0")
+btn7.config(bd=8, bg = "#F4C2C2")
+btn8.config(bd=8, bg = "#FFE0E0")
+btn9.config(bd=8, bg = "#F4C2C2")
+
 btn1.grid(row=0, column=0)
 btn2.grid(row=0, column=1)
 btn3.grid(row=0, column=2)
