@@ -28,19 +28,25 @@ def btnClick(button): #padod visu pogu
 def infoLogs():
     newLogs=Toplevel()
     newLogs.title('Info par programmu')
-    newLogs.geometry("400x400")
-    desc=Label(newLogs, text='Spēlē piedalās divi spēlētāji, ciens spēlē ar X simbolu, otrs ar 0.')
+    newLogs.geometry("715x210")
+    desc=Label(newLogs, text='')
     desc.grid(row=0, column=0)
-    desc=Label(newLogs, text='Gājienus veic pamīšus, sākot ar X spēlētāju, katrā gājienā var novietot tikai vienu X vai 0 simbolu')
+    desc=Label(newLogs, text='SPĒLES NOTEIKUMI',bg = "#F4C2C2" )
     desc.grid(row=1, column=0)
-    desc=Label(newLogs, text='Sākotnēji laukumu veido 9 tukši kvadrāti, simbolus var novietot tikai tukšajos laukumos, un, kad laukums ir aizpildīt, viņu nevar mainīt.')
+    desc=Label(newLogs, text='')
     desc.grid(row=2, column=0)
-    desc=Label(newLogs, text='Uzvarētājs ir pirmais, kurš taisnā līnijāiegūst 3 simbolus (līnija var būt novietota pa diagonāli, vertikāli vai horizontāli).')
+    desc=Label(newLogs, text='Spēlē piedalās divi spēlētāji, ciens spēlē ar X simbolu, otrs ar 0.')
+    desc.grid(row=3, column=0)
+    desc=Label(newLogs, text='Gājienus veic pamīšus, sākot ar X spēlētāju, katrā gājienā var novietot tikai vienu X vai 0 simbolu')
     desc.grid(row=4, column=0)
-    desc=Label(newLogs, text='Spēle ir beigusies, kad visi 9 lauciņi ir aizpildīti ar simboliem, pat ja nevienam no spēlētājiem nav taisnas linijas ar 3 simboliem.')
-    desc.grid(row=4, column=0)
-    desc=Label(newLogs, text='Ja nevienam spēlētājam nav 3 simbolu taisnes, tas tiek uzskatīts par neizšķirtu.')
+    desc=Label(newLogs, text='Sākotnēji laukumu veido 9 tukši kvadrāti, simbolus var novietot tikai tukšajos laukumos, un, kad laukums ir aizpildīt, viņu nevar mainīt.')
     desc.grid(row=5, column=0)
+    desc=Label(newLogs, text='Uzvarētājs ir pirmais, kurš taisnā līnijāiegūst 3 simbolus (līnija var būt novietota pa diagonāli, vertikāli vai horizontāli).')
+    desc.grid(row=6, column=0)
+    desc=Label(newLogs, text='Spēle ir beigusies, kad visi 9 lauciņi ir aizpildīti ar simboliem, pat ja nevienam no spēlētājiem nav taisnas linijas ar 3 simboliem.')
+    desc.grid(row=7, column=0)
+    desc=Label(newLogs, text='Ja nevienam spēlētājam nav 3 simbolu taisnes, tas tiek uzskatīts par neizšķirtu.')
+    desc.grid(row=8, column=0)
     return 0
 
 def disableButtons():
@@ -56,6 +62,8 @@ def disableButtons():
     return 0
 
 def reset():
+    global count
+    count = 0
     btn1.config(state=NORMAL)
     btn2.config(state=NORMAL)
     btn3.config(state=NORMAL)
