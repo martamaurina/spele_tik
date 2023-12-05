@@ -5,6 +5,7 @@ from tkinter import messagebox #paziņojumi, ieteikumi
 mansLogs=Tk()
 mansLogs.title("TicTicToe")
 
+
 speletajsX=True
 count=0
 
@@ -22,6 +23,25 @@ def btnClick(button): #padod visu pogu
         checkWinner()
     else:
         messagebox.showerror('TicTocToe', 'Šeit kāds jau ir ieklišķinājis')
+
+
+def infoLogs():
+    newLogs=Toplevel()
+    newLogs.title('Info par programmu')
+    newLogs.geometry("400x400")
+    desc=Label(newLogs, text='Spēlē piedalās divi spēlētāji, ciens spēlē ar X simbolu, otrs ar 0.')
+    desc.grid(row=0, column=0)
+    desc=Label(newLogs, text='Gājienus veic pamīšus, sākot ar X spēlētāju, katrā gājienā var novietot tikai vienu X vai 0 simbolu')
+    desc.grid(row=1, column=0)
+    desc=Label(newLogs, text='Sākotnēji laukumu veido 9 tukši kvadrāti, simbolus var novietot tikai tukšajos laukumos, un, kad laukums ir aizpildīt, viņu nevar mainīt.')
+    desc.grid(row=2, column=0)
+    desc=Label(newLogs, text='Uzvarētājs ir pirmais, kurš taisnā līnijāiegūst 3 simbolus (līnija var būt novietota pa diagonāli, vertikāli vai horizontāli).')
+    desc.grid(row=4, column=0)
+    desc=Label(newLogs, text='Spēle ir beigusies, kad visi 9 lauciņi ir aizpildīti ar simboliem, pat ja nevienam no spēlētājiem nav taisnas linijas ar 3 simboliem.')
+    desc.grid(row=4, column=0)
+    desc=Label(newLogs, text='Ja nevienam spēlētājam nav 3 simbolu taisnes, tas tiek uzskatīts par neizšķirtu.')
+    desc.grid(row=5, column=0)
+    return 0
 
 def disableButtons():
     btn1.config(state=DISABLED)
@@ -64,13 +84,13 @@ def checkWinner():
       btn1["text"]=="X" and btn4["text"]=="X" and btn7["text"]=="X" or btn2["text"]=="X"and btn5["text"]=="X" and btn8["text"]=="X" or btn3["text"]=="X" and btn6["text"]=="X"and btn9["text"]=="X"): #vertikāli
         winner=True
         disableButtons()
-        messagebox.showinfo("TicTacToe", "X ir uzvarējtājs")
+        messagebox.showinfo("TicTacToe", "X ir uzvarētājs")
     elif(btn1["text"]=="O" and btn2["text"]=="O" and btn3["text"]=="O" or btn4["text"]=="O" and btn5["text"]=="O" and btn6["text"]=="O" or btn7["text"]=="O" and btn8["text"]=="O" and btn9["text"]=="O" or
       btn1["text"]=="O" and btn5["text"]=="O" and btn9["text"]=="O" or btn3["text"]=="O"and btn5["text"]=="O" and btn7["text"]=="O" or 
       btn1["text"]=="O" and btn4["text"]=="O" and btn7["text"]=="O" or btn2["text"]=="O"and btn5["text"]=="O" and btn8["text"]=="O" or btn3["text"]=="O" and btn6["text"]=="O"and btn9["text"]=="O"):
         winner=True
         disableButtons()
-        messagebox.showinfo("TicTacToe", "O ir uzvarējtājs")
+        messagebox.showinfo("TicTacToe", "O ir uzvarētājs")
     elif count==9 and winner==False:
         disableButtons()
         messagebox.showinfo("TicTacToe", "Neizšķirts")
@@ -114,7 +134,7 @@ galvenalzvelne.add_cascade(label="Opcijas", menu=opcijas)#lejupkritošais  sarak
 
 opcijas.add_command(label="Jauna spēle", command=reset)
 opcijas.add_command(label="Iziet", command=mansLogs.quit)
-
+galvenalzvelne.add_command(label="Par programmu", command=infoLogs)
 
 
 
